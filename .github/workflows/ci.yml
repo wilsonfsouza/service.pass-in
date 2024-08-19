@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+defaults:
+ run:
+  working-directory: ./nodejs-api
+
 jobs:
   build-and-push:
     name: 'Build and Push'
