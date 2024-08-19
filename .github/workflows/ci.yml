@@ -36,5 +36,5 @@ jobs:
       - name: Push image
         run: |
           docker push wilsonfsouza/service.passin:${{ steps.generate_sha.sha }}
-          docker tag wilsonfsouza/service.passin:${{ steps.generate_sha.sha }} wilsonfsouza/service.passin:${{ steps.generate_sha.sha }}:latest
-          docker push wilsonfsouza/service.passin:${{ steps.generate_sha.sha }}:latest
+          docker tag wilsonfsouza/service.passin:${{ steps.generate_sha.sha }} wilsonfsouza/service.passin:latest
+          docker push wilsonfsouza/service.passin:latest
