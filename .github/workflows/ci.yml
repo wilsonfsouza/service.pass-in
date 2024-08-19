@@ -25,7 +25,7 @@ jobs:
           echo "sha=$SHA" >> $GITHUB_OUTPUT
 
       - name: Build docker image
-        run: docker build -t wilsonfsouza/service.pass-in:${{ steps.generate_sha.sha }} .
+        run: docker build -t wilsonfsouza/service.passin:${{ steps.generate_sha.sha }} .
 
       - name: Sign into the container registry
         uses: docker/login-action@v3
@@ -35,6 +35,6 @@ jobs:
       
       - name: Push image
         run: |
-          docker push wilsonfsouza/service.pass-in:${{ steps.generate_sha.sha }}
-          docker tag wilsonfsouza/service.pass-in:${{ steps.generate_sha.sha }} wilsonfsouza/service.pass-in:${{ steps.generate_sha.sha }}:latest
-          docker push wilsonfsouza/service.pass-in:${{ steps.generate_sha.sha }}:latest
+          docker push wilsonfsouza/service.passin:${{ steps.generate_sha.sha }}
+          docker tag wilsonfsouza/service.passin:${{ steps.generate_sha.sha }} wilsonfsouza/service.passin:${{ steps.generate_sha.sha }}:latest
+          docker push wilsonfsouza/service.passin:${{ steps.generate_sha.sha }}:latest
